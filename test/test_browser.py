@@ -1,8 +1,3 @@
-
-import os
-
-from selene import browser, be, have
-
 from pages.registration_pages import RegistrationStudent
 
 
@@ -19,14 +14,14 @@ def test_registration_student():
     registration_student.fill_subject('Chemistry')
     registration_student.fill_hobby()
     registration_student.fill_image('image.png')
-    registration_student.fill_current_adress('homeland')
+    registration_student.fill_current_address('homeland')
     registration_student.fill_state_and_city()
     registration_student.fill_submit()
 
     # проверки
 
     registration_student.shoud_have_text('Anna Ivanova',
-                                        'abc@ya.ru',
+                                         'abc@ya.ru',
                                          'Female',
                                          '8111111111',
                                          '08 August,2000',
@@ -35,6 +30,3 @@ def test_registration_student():
                                          'image.png',
                                          'homeland',
                                          'Uttar Pradesh Merrut')
-
-
-

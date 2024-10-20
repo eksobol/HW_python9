@@ -6,6 +6,7 @@ CURRENT_FILE = os.path.abspath(__file__)
 DIRECTORY = os.path.dirname(CURRENT_FILE)
 FILE = os.path.join(DIRECTORY, "..", "resources")
 
+
 class RegistrationStudent:
 
     def open(self, value):
@@ -49,7 +50,7 @@ class RegistrationStudent:
     def fill_image(self, value):
         browser.element('#uploadPicture').send_keys(os.path.abspath(f"{FILE}/{value}"))
 
-    def fill_current_adress(self, value):
+    def fill_current_address(self, value):
         browser.element('#currentAddress').should(be.blank).type(value).press_enter()
 
     def fill_state_and_city(self):
@@ -73,11 +74,3 @@ class RegistrationStudent:
         browser.element('//table//td[contains(text(),"Address")]/../td[2]').should(have.text(address))
         browser.element('//table//td[contains(text(),"State and City")]/../td[2]').should(
             have.text(state))
-
-
-
-
-
-
-
-

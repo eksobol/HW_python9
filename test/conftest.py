@@ -2,7 +2,8 @@ import pytest
 from selene import browser
 from selenium import webdriver
 
-#добавляем фикстуры
+
+# добавляем фикстуры
 
 @pytest.fixture(scope="session")
 def browser_settings():
