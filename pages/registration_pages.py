@@ -17,9 +17,6 @@ class RegistrationStudent:
     def fill_first_name(self, value):
         browser.element('#firstName').should(be.blank).type(value).press_enter()
 
-    def fill_first_name(self, value):
-        browser.element('#firstName').should(be.blank).type(value).press_enter()
-
     def fill_last_name(self, value):
         browser.element('#lastName').should(be.blank).type(value).press_enter()
 
