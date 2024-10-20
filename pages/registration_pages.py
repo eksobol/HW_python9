@@ -7,6 +7,7 @@ CURRENT_FILE = os.path.abspath(__file__)
 DIRECTORY = os.path.dirname(CURRENT_FILE)
 FILE = os.path.join(DIRECTORY, "..", "resources")
 
+
 class RegistrationStudent:
 
     def open(self, value):
@@ -38,23 +39,16 @@ class RegistrationStudent:
         browser.element('#submit').click()
 
     def should_have_registered(self, user: User):
-        browser.element('//table//td[contains(text(),"Student Name")]/../td[2]').should(have.text(user.first_name + " " + user.last_name))
+        browser.element('//table//td[contains(text(),"Student Name")]/../td[2]').should(
+            have.text(user.first_name + " " + user.last_name))
         browser.element('//table//td[contains(text(),"Student Email")]/../td[2]').should(have.text(user.email))
         browser.element('//table//td[contains(text(),"Gender")]/../td[2]').should(have.text(user.gender))
         browser.element('//table//td[contains(text(),"Mobile")]/../td[2]').should(have.text(user.number))
-        browser.element('//table//td[contains(text(),"Date of Birth")]/../td[2]').should(have.text(user.date_of_birth["day"] + " " + user.date_of_birth["month2"] + "," + user.date_of_birth["year"]))
+        browser.element('//table//td[contains(text(),"Date of Birth")]/../td[2]').should(have.text(
+            user.date_of_birth["day"] + " " + user.date_of_birth["month2"] + "," + user.date_of_birth["year"]))
         browser.element('//table//td[contains(text(),"Subjects")]/../td[2]').should(have.text(user.subject))
         browser.element('//table//td[contains(text(),"Hobbies")]/../td[2]').should(have.text(user.hobby))
         browser.element('//table//td[contains(text(),"Picture")]/../td[2]').should(have.text(user.image))
         browser.element('//table//td[contains(text(),"Address")]/../td[2]').should(have.text(user.address))
         browser.element('//table//td[contains(text(),"State and City")]/../td[2]').should(
             have.text(user.state))
-
-
-
-
-
-
-
-
-
